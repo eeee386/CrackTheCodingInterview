@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$USER_HOME$/.Rider2018.2/system/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.Rider2018.2/system/resharper-host/local/Transient/ReSharperHost/v182/SolutionCaches/_Solutions.1320282800.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
+      <e p="Solutions" t="IncludeRecursive">
+        <e p="ArraysAndStringsSolutions.cs" t="Include" />
+        <e p="LinkedLists" t="Include">
+          <e p="LinkedList.cs" t="Include" />
+          <e p="LinkedListSolutions.cs" t="Include" />
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Solutions.csproj" t="IncludeRecursive" />
+        <e p="Solutions.csproj.DotSettings" t="Include" />
+        <e p="StacksAndQueues" t="Include">
+          <e p="AnimalShelter.cs" t="Include" />
+          <e p="MyQueue.cs" t="Include" />
+          <e p="SetOfStacks.cs" t="Include" />
+          <e p="Stack.cs" t="Include" />
+        </e>
+        <e p="TreesAndGraphs" t="Include">
+          <e p="BinarySearchTreeNode.cs" t="Include" />
+          <e p="BinaryTreeNode.cs" t="Include" />
+          <e p="Graph.cs" t="Include" />
+          <e p="PredicatedHeap.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.0" t="Include">
+              <e p="Solutions.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Solutions.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

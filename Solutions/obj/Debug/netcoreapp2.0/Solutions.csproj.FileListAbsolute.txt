@@ -1,0 +1,10 @@
+/home/sedon/Programming/CrackingTheCodeInterview/Solutions/Solutions/bin/Debug/netcoreapp2.0/Solutions.deps.json
+/home/sedon/Programming/CrackingTheCodeInterview/Solutions/Solutions/bin/Debug/netcoreapp2.0/Solutions.runtimeconfig.json
+/home/sedon/Programming/CrackingTheCodeInterview/Solutions/Solutions/bin/Debug/netcoreapp2.0/Solutions.runtimeconfig.dev.json
+/home/sedon/Programming/CrackingTheCodeInterview/Solutions/Solutions/bin/Debug/netcoreapp2.0/Solutions.dll
+/home/sedon/Programming/CrackingTheCodeInterview/Solutions/Solutions/bin/Debug/netcoreapp2.0/Solutions.pdb
+/home/sedon/Programming/CrackingTheCodeInterview/Solutions/Solutions/obj/Debug/netcoreapp2.0/Solutions.csproj.CoreCompileInputs.cache
+/home/sedon/Programming/CrackingTheCodeInterview/Solutions/Solutions/obj/Debug/netcoreapp2.0/Solutions.AssemblyInfoInputs.cache
+/home/sedon/Programming/CrackingTheCodeInterview/Solutions/Solutions/obj/Debug/netcoreapp2.0/Solutions.AssemblyInfo.cs
+/home/sedon/Programming/CrackingTheCodeInterview/Solutions/Solutions/obj/Debug/netcoreapp2.0/Solutions.dll
+/home/sedon/Programming/CrackingTheCodeInterview/Solutions/Solutions/obj/Debug/netcoreapp2.0/Solutions.pdb
