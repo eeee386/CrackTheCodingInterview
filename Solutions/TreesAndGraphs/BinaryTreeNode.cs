@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Solutions
 {
@@ -33,7 +34,37 @@ namespace Solutions
             WritePostOrder(node.right);
             Console.WriteLine(node.data);
         }
-        
+
+        public List<List<BinaryTreeNode<T>>> ListOfDepth()
+        {
+            int depth = 0;
+            List<List<BinaryTreeNode<T>>> listOfDepths =  new List<List<BinaryTreeNode<T>>>();
+            return ListOfDepthsHelper(this, depth, listOfDepths);
+        }
+
+        private static List<List<BinaryTreeNode<T>>> ListOfDepthsHelper(BinaryTreeNode<T> node, int depth = 0, List<List<BinaryTreeNode<T>>> listOfDepths = null)
+        {
+            if (listOfDepths == null)
+            {
+                listOfDepths = new List<List<BinaryTreeNode<T>>>();
+            }
+            if (listOfDepths[depth] == null)
+            {
+                listOfDepths[depth] = new List<BinaryTreeNode<T>>();
+            }
+            listOfDepths[depth].Add(node);
+            if(node.left != null)
+            {
+                ListOfDepthsHelper(node.left, depth + 1, listOfDepths);
+            }
+            if(node.right != null)
+            {
+                ListOfDepthsHelper(node.right, depth + 1, listOfDepths);
+            }
+            return listOfDepths;
+        }
+
+
         
     }
 }
