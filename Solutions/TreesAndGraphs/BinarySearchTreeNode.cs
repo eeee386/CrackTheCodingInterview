@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Solutions.TreesAndGraphs
 {
@@ -83,5 +84,33 @@ namespace Solutions.TreesAndGraphs
             // I think this is not needed, but compiler was whining.
             throw new Exception("No such element is found.");
         }
+
+        public List<List<int>> getBSTSequence()
+        {
+            List<List<int>> sequence = new List<List<int>>();
+            sequence.Add(new List<int>(this.data));
+            int depth = 0;
+            int start = 1;
+            return BSTSequence(this, sequence, depth, start);
+        }
+
+        private static List<List<int>> BSTSequence(BinarySearchTreeNode node, List<List<int>> sequence, int depth, int start)
+        {
+            if (node.Left == null && node.Right == null)
+            {
+                return sequence;
+            }
+            depth = depth + 4;
+
+            if (node.left != null)
+            {
+                return BSTSequence(node.Left, sequence, depth);
+            }
+
+            if (node.right != null)
+            {
+                return BSTSequence(node.Right, sequence, depth);
+            }
+        } 
     }
 }

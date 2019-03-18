@@ -10,6 +10,8 @@ namespace Solutions
         public readonly BinaryTreeNode<T> left;
         public readonly BinaryTreeNode<T> right;
         public readonly BinaryTreeNode<T> parent;
+        public bool visited1;
+        public bool visited2;
 
         public BinaryTreeNode(T data)
         {
@@ -162,6 +164,33 @@ namespace Solutions
             return node;
         }
 
-        
+        public static BinaryTreeNode<T> FirstCommonAncestor(BinaryTreeNode<T> node1, BinaryTreeNode<T> node2)
+        {
+            BinaryTreeNode<T> traversalNode1 = node1;
+            BinaryTreeNode<T> traversalNode2 = node2;
+            while (traversalNode1 != null || traversalNode2 != null)
+            {
+                if (traversalNode1 != null)
+                {
+                    if (traversalNode1.visited2)
+                    {
+                        return traversalNode1;
+                    }
+                    traversalNode1.visited1 = true;
+                }
+
+                if (traversalNode2 != null)
+                {
+                    if (traversalNode2.visited1)
+                    {
+                        return traversalNode2;
+                    }
+                    traversalNode2.visited2 = true;
+                }
+                traversalNode1 = traversalNode1?.parent;
+                traversalNode2 = traversalNode2?.parent;
+            }
+            throw new Exception("No ancestor node!");
+        }
     }
 }
