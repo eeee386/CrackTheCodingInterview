@@ -8,9 +8,9 @@
 /home/sedon/Programming/CrackingTheCodeInterview/Solutions/Solutions/obj/Debug/netcoreapp2.0/Solutions.AssemblyInfo.cs
 /home/sedon/Programming/CrackingTheCodeInterview/Solutions/Solutions/obj/Debug/netcoreapp2.0/Solutions.dll
 /home/sedon/Programming/CrackingTheCodeInterview/Solutions/Solutions/obj/Debug/netcoreapp2.0/Solutions.pdb
-C:\CrackingTheCodeInterview\CrackTheCodingInterview\Solutions\obj\Debug\netcoreapp2.0\Solutions.csprojAssemblyReference.cache
-C:\CrackingTheCodeInterview\CrackTheCodingInterview\Solutions\obj\Debug\netcoreapp2.0\Solutions.csproj.CoreCompileInputs.cache
-C:\CrackingTheCodeInterview\CrackTheCodingInterview\Solutions\obj\Debug\netcoreapp2.0\Solutions.AssemblyInfoInputs.cache
-C:\CrackingTheCodeInterview\CrackTheCodingInterview\Solutions\obj\Debug\netcoreapp2.0\Solutions.AssemblyInfo.cs
-C:\CrackingTheCodeInterview\CrackTheCodingInterview\Solutions\obj\Debug\netcoreapp2.0\Solutions.dll
-C:\CrackingTheCodeInterview\CrackTheCodingInterview\Solutions\obj\Debug\netcoreapp2.0\Solutions.pdb
+C:/CrackingTheCodeInterview/CrackTheCodingInterview/Solutions/obj/Debug/netcoreapp2.0/Solutions.csprojAssemblyReference.cache
+C:/CrackingTheCodeInterview/CrackTheCodingInterview/Solutions/obj/Debug/netcoreapp2.0/Solutions.csproj.CoreCompileInputs.cache
+C:/CrackingTheCodeInterview/CrackTheCodingInterview/Solutions/obj/Debug/netcoreapp2.0/Solutions.AssemblyInfoInputs.cache
+C:/CrackingTheCodeInterview/CrackTheCodingInterview/Solutions/obj/Debug/netcoreapp2.0/Solutions.AssemblyInfo.cs
+C:/CrackingTheCodeInterview/CrackTheCodingInterview/Solutions/obj/Debug/netcoreapp2.0/Solutions.dll
+C:/CrackingTheCodeInterview/CrackTheCodingInterview/Solutions/obj/Debug/netcoreapp2.0/Solutions.pdb

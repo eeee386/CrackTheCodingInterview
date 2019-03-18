@@ -5,6 +5,7 @@
     <e p="$USER_HOME$/.Rider2018.2/system/resharper-host/local/Transient/ReSharperHost/v182/SolutionCaches/_Solutions.1320282800.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeFlat">
       <e p="Solutions" t="IncludeRecursive">
+        <e p="Array" t="Include" />
         <e p="ArraysAndStringsSolutions.cs" t="Include" />
         <e p="LinkedLists" t="Include">
           <e p="LinkedList.cs" t="Include" />

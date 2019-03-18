@@ -11,7 +11,12 @@ namespace Solutions.TreesAndGraphs
 {
     public class Graph<T>
     {
-        public Node<T>[] Nodes;
+        public HashSet<Node<T>> Nodes;
+
+        public Graph(HashSet<Node<T>> nodes)
+        {
+            Nodes = new HashSet<Node<T>>(nodes);
+        }
 
         public class Node<T>
         {
@@ -20,6 +25,7 @@ namespace Solutions.TreesAndGraphs
 
             // for DFS or BFS
             public bool visited;
+
             // for bidirectional search
             public bool visited1;
             public bool visited2;
@@ -41,6 +47,7 @@ namespace Solutions.TreesAndGraphs
                 {
                     return DepthFirstSearch(dataToSearch);
                 }
+
                 throw new Exception("No such element in graph!");
             }
 
@@ -56,6 +63,7 @@ namespace Solutions.TreesAndGraphs
                     {
                         return this;
                     }
+
                     foreach (var node in dequeuedNode.Nodes)
                     {
                         if (node.visited == false)
@@ -65,6 +73,7 @@ namespace Solutions.TreesAndGraphs
                         }
                     }
                 }
+
                 throw new Exception("No such element in graph!");
             }
 
@@ -79,19 +88,21 @@ namespace Solutions.TreesAndGraphs
                 myQueue1.Enqueue(node1);
                 myQueue2.Enqueue(node2);
 
-                while(!(myQueue1.IsEmpty() && myQueue2.IsEmpty()))
+                while (!(myQueue1.IsEmpty() && myQueue2.IsEmpty()))
                 {
                     Node<T> dequeuedNode1 = myQueue1.Dequeue();
                     Node<T> dequeuedNode2 = myQueue2.Dequeue();
 
-                    if(dequeuedNode1.visited2)
+                    if (dequeuedNode1.visited2)
                     {
                         return dequeuedNode1;
                     }
+
                     if (dequeuedNode2.visited1)
                     {
                         return dequeuedNode2;
                     }
+
                     foreach (var childNode1 in dequeuedNode1.Nodes)
                     {
                         if (childNode1.visited1 == false)
@@ -100,6 +111,7 @@ namespace Solutions.TreesAndGraphs
                             myQueue1.Enqueue(childNode1);
                         }
                     }
+
                     foreach (var childNode2 in dequeuedNode2.Nodes)
                     {
                         if (childNode2.visited1 == false)
@@ -109,7 +121,43 @@ namespace Solutions.TreesAndGraphs
                         }
                     }
                 }
+
                 throw new Exception("No path found between the nodes");
+            }
+
+            public static List<Node<T>> BuildOrder(HashSet<Node<T>> nodes, List<Tuple<Node<T>, Node<T>>> dependencies)
+            {
+                var dictOfDependencies = new Dictionary<Node<T>, HashSet<Node<T>>>();
+                foreach (var node in nodes)
+                {
+                    dictOfDependencies[node] = new HashSet<Node<T>>();
+                }
+
+                foreach (var dependency in dependencies)
+                {
+                    dictOfDependencies[dependency.Item2].Add(dependency.Item1);
+                }
+
+                var sort = from entry in dictOfDependencies orderby entry.Value select entry;
+                var sortedDict = sort.ToDictionary(item => item.Key, item => item.Value);
+                
+                
+                List<Node<T>> buildOrder = new List<Node<T>>();
+                int prevCount = 0;
+                while (buildOrder.Count != dictOfDependencies.Keys.Count || prevCount == buildOrder.Count)
+                {
+                    prevCount = buildOrder.Count;
+                    foreach (var key in sortedDict.Keys)
+                    {
+                        sortedDict[key] = sortedDict[key].Except(buildOrder).ToHashSet();
+                        if (!dictOfDependencies[key].Any())
+                        {
+                            buildOrder.Add(key);
+                        }
+                    }
+                }
+
+                return buildOrder;
             }
         }
     }
