@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Reflection.Metadata.Ecma335;
 
 namespace Solutions
 {
@@ -103,10 +102,8 @@ namespace Solutions
             {
                 return Int32.MinValue;
             }
-            else
-            {
-                return Math.Max(leftHeight, rightHeight) + 1;
-            }
+
+            return Math.Max(leftHeight, rightHeight) + 1;
         }
 
         public static bool IsBinarySearchTree(BinaryTreeNode<int> node, int? min, int? max)
@@ -135,18 +132,16 @@ namespace Solutions
             {
                 return LeftMostChild(node.right);
             }
-            else
-            {
-                BinaryTreeNode<T> q = node;
-                BinaryTreeNode<T> parent = q.parent;
-                while (parent != null && parent.left != q)
-                {
-                    q = parent;
-                    parent = parent.parent;
-                }
 
-                return parent;
+            BinaryTreeNode<T> q = node;
+            BinaryTreeNode<T> parent = q.parent;
+            while (parent != null && parent.left != q)
+            {
+                q = parent;
+                parent = parent.parent;
             }
+
+            return parent;
         }
 
         private static BinaryTreeNode<T> LeftMostChild(BinaryTreeNode<T> node)
@@ -191,6 +186,49 @@ namespace Solutions
                 traversalNode2 = traversalNode2?.parent;
             }
             throw new Exception("No ancestor node!");
+        }
+
+        public static int PathsWithSum(int value, int counter, BinaryTreeNode<int> node)
+        {
+            if (value == node.data)
+            {
+                return ++counter;
+            }
+
+            if (value < node.data)
+            {
+                return counter;
+            }
+            value = value - node.data;
+            return PathsWithSum(value, counter, node.left) + PathsWithSum(value, counter, node.left);
+        }
+        
+        public static bool CheckSubTree(BinaryTreeNode<int> bigger, BinaryTreeNode<int> smaller)
+        {
+            if (smaller.left == null && smaller.right == null)
+            {
+                return true;
+            }
+
+            if (smaller.left != null && smaller.right == null)
+            {
+                return smaller.left.data == bigger.left.data && CheckSubTree(bigger.left, smaller.left);
+            }
+            
+            if (smaller.right != null && smaller.left == null)
+            {
+                return smaller.right.data == bigger.right.data && CheckSubTree(bigger.right, smaller.right);
+            }
+
+            if (smaller.left != null && smaller.right != null)
+            {
+                if (smaller.left.data != bigger.left.data && smaller.right.data != bigger.right.data)
+                {
+                    return false;
+                }
+                return CheckSubTree(bigger.left, smaller.left) && CheckSubTree(bigger.right, smaller.right);
+            }
+            return false;
         }
     }
 }

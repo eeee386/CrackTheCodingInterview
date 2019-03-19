@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Solutions.TreesAndGraphs
 {
@@ -85,32 +87,93 @@ namespace Solutions.TreesAndGraphs
             throw new Exception("No such element is found.");
         }
 
-        public List<List<int>> getBSTSequence()
+        public List<LinkedList<int>> getBSTSequence()
         {
-            List<List<int>> sequence = new List<List<int>>();
-            sequence.Add(new List<int>(this.data));
-            int depth = 0;
-            int start = 1;
-            return BSTSequence(this, sequence, depth, start);
+            return BinarySearchTreeSequence(this);
         }
 
-        private static List<List<int>> BSTSequence(BinarySearchTreeNode node, List<List<int>> sequence, int depth, int start)
+        private static List<LinkedList<int>> BinarySearchTreeSequence(BinarySearchTreeNode node)
         {
-            if (node.Left == null && node.Right == null)
-            {
-                return sequence;
-            }
-            depth = depth + 4;
+            List<LinkedList<int>> result = new List<LinkedList<int>>();
 
-            if (node.left != null)
+            if (node == null)
             {
-                return BSTSequence(node.Left, sequence, depth);
+                result.Add(new LinkedList<int>());
+                return result;
+            }
+            
+            LinkedList<int> prefix = new LinkedList<int>();
+            prefix.AddLast(node.data);
+
+            List<LinkedList<int>> leftSeq = BinarySearchTreeSequence(node.Left);
+            List<LinkedList<int>> rightSeq = BinarySearchTreeSequence(node.Right);
+
+            foreach (var left in leftSeq)
+            {
+                foreach (var right in rightSeq)
+                {
+                    List<LinkedList<int>> weaved = new List<LinkedList<int>>();
+                    WeaveLists(left, right, weaved, prefix);
+                    result.AddRange(weaved);
+                }
+            }
+            return result;
+        }
+
+        private static void WeaveLists(LinkedList<int> first, LinkedList<int> second, List<LinkedList<int>> results,
+            LinkedList<int> prefix)
+        {
+            if (first.Count == 0 || second.Count == 0)
+            {
+                LinkedList<int> result = new LinkedList<int>(prefix);
+                result = (LinkedList<int>) result.Concat(first);
+                result = (LinkedList<int>) result.Concat(second);
+                results.Add(result);
             }
 
-            if (node.right != null)
+            int headFirst = first.First.Value;
+            first.RemoveFirst();
+
+            prefix.AddLast(headFirst);
+            WeaveLists(first, second, results, prefix);
+            prefix.RemoveLast();
+            first.AddFirst(headFirst);
+
+            int headSecond = second.First.Value;
+            second.RemoveFirst();
+            prefix.AddLast(headSecond);
+            WeaveLists(first, second, results, prefix);
+            prefix.RemoveLast();
+            second.AddFirst(headSecond);
+        }
+
+        public static bool CheckSubtree(BinarySearchTreeNode bigger, BinarySearchTreeNode smaller)
+        {
+            if (smaller.Left == null && smaller.Right == null)
             {
-                return BSTSequence(node.Right, sequence, depth);
+                return true;
             }
-        } 
+
+            if (smaller.Left != null && smaller.Right == null)
+            {
+                return smaller.Left.data == bigger.Left.data && CheckSubtree(bigger.Left, smaller.Left);
+            }
+            
+            if (smaller.Right != null && smaller.Left == null)
+            {
+                return smaller.Right.data == bigger.Right.data && CheckSubtree(bigger.Right, smaller.Right);
+            }
+
+            if (smaller.Left != null && smaller.Right != null)
+            {
+                if (smaller.Left.data != bigger.Left.data && smaller.Right.data != bigger.Right.data)
+                {
+                    return false;
+                }
+                return CheckSubtree(bigger.Left, smaller.Left) && CheckSubtree(bigger.Right, smaller.Right);
+            }
+
+            return false;
+        }
     }
 }
