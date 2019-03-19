@@ -7,6 +7,9 @@
       <e p="Solutions" t="IncludeRecursive">
         <e p="Array" t="Include" />
         <e p="ArraysAndStringsSolutions.cs" t="Include" />
+        <e p="BitManipulation" t="Include">
+          <e p="BitHelper.cs" t="Include" />
+        </e>
         <e p="LinkedLists" t="Include">
           <e p="LinkedList.cs" t="Include" />
           <e p="LinkedListSolutions.cs" t="Include" />
