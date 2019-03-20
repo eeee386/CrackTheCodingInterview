@@ -28,5 +28,12 @@ namespace Solutions.BitManipulation
             return value & ~(1 << position);
         }
 
+        public int UpdateBit(int i, bool bit)
+        {
+            int val = bit ? 1 : 0;
+            int mask = ~(1 << i);
+            return (value & mask) | val << i;
+        }
+
     }
-}
+}u
