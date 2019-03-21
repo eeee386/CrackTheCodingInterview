@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Solutions.BitManipulation;
 
 namespace Solutions
 {
@@ -120,8 +121,48 @@ namespace Solutions
 //            queue.WriteToConsole();
 //            Console.WriteLine();
 //            Console.WriteLine(queue.GetMin());
+//            Console.WriteLine(Convert.ToString(23, 2));
+//            Console.WriteLine(new Bit(23).GetBitAtPosition(3));
+//            Console.WriteLine(Convert.ToString(456, 2));
+//            Console.WriteLine(Convert.ToString(Bit.Insertion(456, 4, 2, 6), 2));
+//            Console.WriteLine();
+//
+//            Console.WriteLine(Bit.DoubleFractionToBinaryString(0.33345));
+//            Console.WriteLine(Bit.DoubleFractionToBinaryString(0.9666));
+//            Console.WriteLine(Bit.DoubleFractionToBinaryString(0.6783345));
+//            Console.WriteLine();
+//
+//            Console.WriteLine(new Bit(13).FindLongestSequenceOfFlipped());
+//            Console.WriteLine(Convert.ToString(13, 2));
+//            Console.WriteLine(new Bit(39).FindLongestSequenceOfFlipped());
+//            Console.WriteLine(Convert.ToString(39, 2));
+//            Console.WriteLine(new Bit(34).FindLongestSequenceOfFlipped());
+//            Console.WriteLine(Convert.ToString(34, 2));
+//            Console.WriteLine();
+//            
+//            Console.WriteLine(Convert.ToString(13, 2));
+//            Console.WriteLine(Convert.ToString(new Bit(13).FindNextSmallestOfBits(), 2));
+//            Console.WriteLine(Convert.ToString(new Bit(13).FindNextLargestOfBits(), 2));
+//            
+//            Console.WriteLine(Convert.ToString(39, 2));
+//            Console.WriteLine(Convert.ToString(new Bit(39).FindNextSmallestOfBits(), 2));
+//            Console.WriteLine(Convert.ToString(new Bit(39).FindNextLargestOfBits(), 2));
+//            
+//            Console.WriteLine(Convert.ToString(2356, 2));
+//            Console.WriteLine(Convert.ToString(new Bit(2356).FindNextSmallestOfBits(), 2));
+//            Console.WriteLine(Convert.ToString(new Bit(2356).FindNextLargestOfBits(), 2));
             
-           
+//            Console.WriteLine(Convert.ToString(13, 2));
+//            Console.WriteLine(Convert.ToString(new Bit(13).PairwiseSwap(), 2));
+//            
+//            Console.WriteLine(Convert.ToString(341, 2));
+//            Console.WriteLine(Convert.ToString(new Bit(341).PairwiseSwap(), 2));
+//            
+//            Console.WriteLine(Convert.ToString(754, 2));
+//            Console.WriteLine(Convert.ToString(new Bit(754).PairwiseSwap(), 2));
+
+            byte[] screen = new byte[40];
+            Bit.DrawLine(screen, 40, 12, 35, 2);
         }
     }
 }
