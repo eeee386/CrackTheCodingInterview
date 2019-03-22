@@ -14,6 +14,14 @@
           <e p="LinkedList.cs" t="Include" />
           <e p="LinkedListSolutions.cs" t="Include" />
         </e>
+        <e p="ObjectOrientedDesign" t="Include">
+          <e p="BlackJack.cs" t="Include" />
+          <e p="Card.cs" t="Include" />
+          <e p="DeckOfFrenchCards.cs" t="Include" />
+          <e p="FrenchCard.cs" t="Include" />
+          <e p="IFrenchCardGame.cs" t="Include" />
+          <e p="Players.cs" t="Include" />
+        </e>
         <e p="Program.cs" t="Include" />
         <e p="Solutions.csproj" t="IncludeRecursive" />
         <e p="Solutions.csproj.DotSettings" t="Include" />
