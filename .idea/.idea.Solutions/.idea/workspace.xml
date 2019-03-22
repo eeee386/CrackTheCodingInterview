@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa9b4135-542d-49b1-b0f2-49143c48d3e3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Solutions/ObjectOrientedDesign/BlackJack.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Solutions/ObjectOrientedDesign/Card.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Solutions/ObjectOrientedDesign/DeckOfFrenchCards.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Solutions/ObjectOrientedDesign/FrenchCard.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Solutions/ObjectOrientedDesign/IFrenchCardGame.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Solutions/ObjectOrientedDesign/Players.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Solutions/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Solutions/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Solutions/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Solutions/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Solutions/ObjectOrientedDesign/Players.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Solutions/ObjectOrientedDesign/Players.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -134,11 +127,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Solutions/ObjectOrientedDesign/BlackJack.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="31" column="74" selection-start-line="31" selection-start-column="74" selection-end-line="31" selection-end-column="74" />
+            <state relative-caret-position="323">
+              <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
               <folding>
                 <marker date="1553262278072" expanded="true" signature="6:83" ph="..." />
                 <marker date="1553262278072" expanded="true" signature="125:903" ph="{...}" />
@@ -153,19 +146,19 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Solutions/ObjectOrientedDesign/Players.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="497">
-              <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
+            <state relative-caret-position="171">
+              <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
               <folding>
-                <marker date="1553262228280" expanded="true" signature="75:975" ph="{...}" />
-                <marker date="1553262228280" expanded="true" signature="101:973" ph="{...}" />
-                <marker date="1553262228280" expanded="true" signature="262:356" ph="{...}" />
-                <marker date="1553262228280" expanded="true" signature="403:458" ph="{...}" />
-                <marker date="1553262228280" expanded="true" signature="500:628" ph="{...}" />
-                <marker date="1553262228280" expanded="true" signature="686:747" ph="{...}" />
-                <marker date="1553262228280" expanded="true" signature="796:967" ph="{...}" />
+                <marker date="1553268117467" expanded="true" signature="75:959" ph="{...}" />
+                <marker date="1553268117467" expanded="true" signature="101:957" ph="{...}" />
+                <marker date="1553268117467" expanded="true" signature="246:340" ph="{...}" />
+                <marker date="1553268117467" expanded="true" signature="387:442" ph="{...}" />
+                <marker date="1553268117467" expanded="true" signature="484:612" ph="{...}" />
+                <marker date="1553268117467" expanded="true" signature="670:731" ph="{...}" />
+                <marker date="1553268117467" expanded="true" signature="780:951" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -354,8 +347,8 @@
         <option value="$PROJECT_DIR$/Solutions/ObjectOrientedDesign/IGame.cs" />
         <option value="$PROJECT_DIR$/Solutions/ObjectOrientedDesign/IFrenchCardGame.cs" />
         <option value="$PROJECT_DIR$/Solutions/ObjectOrientedDesign/DeckOfFrenchCards.cs" />
-        <option value="$PROJECT_DIR$/Solutions/ObjectOrientedDesign/Players.cs" />
         <option value="$PROJECT_DIR$/Solutions/ObjectOrientedDesign/BlackJack.cs" />
+        <option value="$PROJECT_DIR$/Solutions/ObjectOrientedDesign/Players.cs" />
       </list>
     </option>
   </component>
@@ -464,12 +457,12 @@
       <workItem from="1552382390614" duration="62726000" />
       <workItem from="1552913038193" duration="26326000" />
       <workItem from="1553071808645" duration="11879000" />
-      <workItem from="1553160159807" duration="26058000" />
+      <workItem from="1553160159807" duration="26764000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133052000" />
+    <option name="totallyTimeSpent" value="133758000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -485,11 +478,11 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.1774461" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.1774461" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Unit Tests" order="1" />
-      <window_info anchor="bottom" id="Terminal" order="2" visible="true" weight="0.3493724" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.3493724" />
       <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="5" show_stripe_button="false" />
@@ -958,6 +951,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Solutions/ObjectOrientedDesign/BlackJack.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
+          <folding>
+            <marker date="1553262278072" expanded="true" signature="6:83" ph="..." />
+            <marker date="1553262278072" expanded="true" signature="125:903" ph="{...}" />
+            <marker date="1553262278072" expanded="true" signature="171:901" ph="{...}" />
+            <marker date="1553262278072" expanded="true" signature="394:453" ph="{...}" />
+            <marker date="1553262278072" expanded="true" signature="486:696" ph="{...}" />
+            <marker date="1553262278072" expanded="true" signature="581:686" ph="{...}" />
+            <marker date="1553262278072" expanded="true" signature="727:894" ph="{...}" />
+            <marker date="1553262278072" expanded="true" signature="781:884" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Solutions/ObjectOrientedDesign/DeckOfFrenchCards.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
+          <folding>
+            <marker date="1553261766160" expanded="false" signature="6:83" ph="..." />
+            <marker date="1553261766160" expanded="true" signature="125:1488" ph="{...}" />
+            <marker date="1553261766160" expanded="true" signature="162:1486" ph="{...}" />
+            <marker date="1553261766160" expanded="true" signature="280:344" ph="{...}" />
+            <marker date="1553261766160" expanded="true" signature="402:668" ph="{...}" />
+            <marker date="1553261766160" expanded="true" signature="498:631" ph="{...}" />
+            <marker date="1553261766160" expanded="true" signature="699:1037" ph="{...}" />
+            <marker date="1553261766160" expanded="true" signature="765:1026" ph="{...}" />
+            <marker date="1553261766160" expanded="true" signature="1075:1203" ph="{...}" />
+            <marker date="1553261766160" expanded="true" signature="1264:1479" ph="{...}" />
+            <marker date="1553261766160" expanded="true" signature="1314:1379" ph="{...}" />
+            <marker date="1553261766160" expanded="true" signature="1396:1469" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Solutions/ObjectOrientedDesign/FrenchCard.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -984,54 +1015,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Solutions/ObjectOrientedDesign/Players.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
+        <state relative-caret-position="171">
+          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
           <folding>
-            <marker date="1553262228280" expanded="true" signature="75:975" ph="{...}" />
-            <marker date="1553262228280" expanded="true" signature="101:973" ph="{...}" />
-            <marker date="1553262228280" expanded="true" signature="262:356" ph="{...}" />
-            <marker date="1553262228280" expanded="true" signature="403:458" ph="{...}" />
-            <marker date="1553262228280" expanded="true" signature="500:628" ph="{...}" />
-            <marker date="1553262228280" expanded="true" signature="686:747" ph="{...}" />
-            <marker date="1553262228280" expanded="true" signature="796:967" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Solutions/ObjectOrientedDesign/DeckOfFrenchCards.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
-          <folding>
-            <marker date="1553261766160" expanded="false" signature="6:83" ph="..." />
-            <marker date="1553261766160" expanded="true" signature="125:1488" ph="{...}" />
-            <marker date="1553261766160" expanded="true" signature="162:1486" ph="{...}" />
-            <marker date="1553261766160" expanded="true" signature="280:344" ph="{...}" />
-            <marker date="1553261766160" expanded="true" signature="402:668" ph="{...}" />
-            <marker date="1553261766160" expanded="true" signature="498:631" ph="{...}" />
-            <marker date="1553261766160" expanded="true" signature="699:1037" ph="{...}" />
-            <marker date="1553261766160" expanded="true" signature="765:1026" ph="{...}" />
-            <marker date="1553261766160" expanded="true" signature="1075:1203" ph="{...}" />
-            <marker date="1553261766160" expanded="true" signature="1264:1479" ph="{...}" />
-            <marker date="1553261766160" expanded="true" signature="1314:1379" ph="{...}" />
-            <marker date="1553261766160" expanded="true" signature="1396:1469" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Solutions/ObjectOrientedDesign/BlackJack.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="31" column="74" selection-start-line="31" selection-start-column="74" selection-end-line="31" selection-end-column="74" />
-          <folding>
-            <marker date="1553262278072" expanded="true" signature="6:83" ph="..." />
-            <marker date="1553262278072" expanded="true" signature="125:903" ph="{...}" />
-            <marker date="1553262278072" expanded="true" signature="171:901" ph="{...}" />
-            <marker date="1553262278072" expanded="true" signature="394:453" ph="{...}" />
-            <marker date="1553262278072" expanded="true" signature="486:696" ph="{...}" />
-            <marker date="1553262278072" expanded="true" signature="581:686" ph="{...}" />
-            <marker date="1553262278072" expanded="true" signature="727:894" ph="{...}" />
-            <marker date="1553262278072" expanded="true" signature="781:884" ph="{...}" />
+            <marker date="1553268117467" expanded="true" signature="75:959" ph="{...}" />
+            <marker date="1553268117467" expanded="true" signature="101:957" ph="{...}" />
+            <marker date="1553268117467" expanded="true" signature="246:340" ph="{...}" />
+            <marker date="1553268117467" expanded="true" signature="387:442" ph="{...}" />
+            <marker date="1553268117467" expanded="true" signature="484:612" ph="{...}" />
+            <marker date="1553268117467" expanded="true" signature="670:731" ph="{...}" />
+            <marker date="1553268117467" expanded="true" signature="780:951" ph="{...}" />
           </folding>
         </state>
       </provider>

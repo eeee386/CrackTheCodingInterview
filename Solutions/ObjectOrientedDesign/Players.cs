@@ -7,7 +7,7 @@ namespace Solutions.ObjectOrientedDesign
         public string name;
         public List<FrenchCard> cardsInHand;
 
-        public Player(string name, BlackJack game, List<FrenchCard> cardsInHand)
+        public Player(string name, List<FrenchCard> cardsInHand)
         {
             this.name = name;
             this.cardsInHand = cardsInHand;
