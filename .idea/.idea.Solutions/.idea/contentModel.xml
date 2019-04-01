@@ -15,16 +15,43 @@
           <e p="LinkedListSolutions.cs" t="Include" />
         </e>
         <e p="ObjectOrientedDesign" t="Include">
-          <e p="BlackJack.cs" t="Include" />
-          <e p="Card.cs" t="Include" />
-          <e p="DeckOfFrenchCards.cs" t="Include" />
-          <e p="FrenchCard.cs" t="Include" />
-          <e p="IFrenchCardGame.cs" t="Include" />
-          <e p="Players.cs" t="Include" />
+          <e p="CallCenter" t="Include">
+            <e p="Call.cs" t="Include" />
+            <e p="CallCenter.cs" t="Include" />
+            <e p="Director.cs" t="Include" />
+            <e p="Employee.cs" t="Include" />
+            <e p="Manager.cs" t="Include" />
+            <e p="Respondent.cs" t="Include" />
+          </e>
+          <e p="CardGame" t="Include">
+            <e p="BlackJack.cs" t="Include" />
+            <e p="Card.cs" t="Include" />
+            <e p="DeckOfFrenchCards.cs" t="Include" />
+            <e p="FrenchCard.cs" t="Include" />
+            <e p="IFrenchCardGame.cs" t="Include" />
+            <e p="Players.cs" t="Include" />
+            <e p="Ranking.cs" t="Include" />
+            <e p="Suit.cs" t="Include" />
+          </e>
+          <e p="ParkingLot" t="Include">
+            <e p="Bus.cs" t="Include" />
+            <e p="Car.cs" t="Include" />
+            <e p="Level.cs" t="Include" />
+            <e p="MotorCycle.cs" t="Include" />
+            <e p="ParkingLot.cs" t="Include" />
+            <e p="ParkingSpotSizes.cs" t="Include" />
+            <e p="Row.cs" t="Include" />
+            <e p="SmallCar.cs" t="Include" />
+            <e p="Space.cs" t="Include" />
+            <e p="Vehicle.cs" t="Include" />
+          </e>
         </e>
         <e p="Program.cs" t="Include" />
         <e p="Solutions.csproj" t="IncludeRecursive" />
         <e p="Solutions.csproj.DotSettings" t="Include" />
+        <e p="SortingAndSearching" t="Include">
+          <e p="SearchSort.cs" t="Include" />
+        </e>
         <e p="StacksAndQueues" t="Include">
           <e p="AnimalShelter.cs" t="Include" />
           <e p="MyQueue.cs" t="Include" />
