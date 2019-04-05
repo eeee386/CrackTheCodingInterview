@@ -161,8 +161,13 @@ namespace Solutions
 //            Console.WriteLine(Convert.ToString(754, 2));
 //            Console.WriteLine(Convert.ToString(new Bit(754).PairwiseSwap(), 2));
 
-            byte[] screen = new byte[40];
-            Bit.DrawLine(screen, 40, 12, 35, 2);
+//            byte[] screen = new byte[40];
+//            Bit.DrawLine(screen, 40, 12, 35, 2);
+            int[] ints = {9, 8, 3, 7, 1, 97, 3, 7, 4, 6, 4, 66, 225, 442, 123, 42, 123, 53, 664, 63, 24, 73};
+            List<int> list = new List<int>(ints);
+            
+            SortingAndSearching.SearchSort.MergeSort(list);
+            Console.WriteLine(list);
         }
     }
 }
