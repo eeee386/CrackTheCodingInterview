@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
@@ -50,6 +51,27 @@ namespace Solutions.SortingAndSearching
             return list;
         }
         
-        public static List<int> Mergesort()
+        public static int BinarySearch(List<int> list, int x)
+        {
+            int low = 0;
+            int high = list.Count;
+            int mid;
+
+            while(low <= high)
+            {
+                mid = (low + high) / 2;
+                if(list[mid] < x)
+                {
+                    low = mid + 1;
+                } else if (list[mid] > x)
+                {
+                    high = mid-1;
+                } else
+                {
+                    return mid;
+                }
+            }
+            throw new Exception('Value is not in List.');
+        }
     }
 }
