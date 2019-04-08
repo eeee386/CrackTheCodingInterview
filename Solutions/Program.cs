@@ -53,6 +53,76 @@ namespace Solutions
             return stack;
         }
 
+        public static int[] SortedMerge(int[] a, int[] b)
+        {
+            int[] helper = new int[a.Length + b.Length];
+            a.CopyTo(helper, 0);
+            b.CopyTo(helper, a.Length);
+            int aIndex = 0;
+            int bIndex = 0;
+            int hIndex = 0;
+            while(aIndex < a.Length && bIndex < b.Length)
+            {
+                if(a[aIndex] <= b[bIndex])
+                {
+                    helper[hIndex] = a[aIndex];
+                    aIndex++;
+                } else
+                {
+                    helper[hIndex] = b[bIndex];
+                    bIndex++;
+                }
+                hIndex++;
+            }
+            int remaining = a.Length - aIndex;
+
+            for(int g = 0; g < remaining; g++)
+            {
+                helper[hIndex] = a[aIndex + g];
+                hIndex++;
+            }
+            return helper;
+        }
+
+        private static List<string> GroupAnagrams(List<string> strings)
+        {
+            var dict = new Dictionary<string, List<string>>();
+            List<string> groupedList = new List<string>();
+            foreach(var str in strings)
+            {
+                var cs = str.ToCharArray();
+                Array.Sort(cs);
+                var key = cs.ToString();
+                if(dict[key] == null)
+                {
+                    dict.Add(key, new List<string>());
+                    dict[key].Add(str);
+                }
+            }
+            foreach(var obj in dict)
+            {
+                groupedList.AddRange(dict[obj.Key]);
+            }
+            return groupedList;
+        }
+
+        public static int FindValueInRotatedArray(List<int>list, int x)
+        {
+            int infl = 0;
+            for(int i = 0; i < list.Count-1; i++)
+            {
+                if(list[i] == x)
+                {
+                    return i;
+                }
+                if(list[i] > list[i + 1])
+                {
+                    infl = i + 1;
+                    SortingAndSearching.SearchSort.BinarySearch(list.GetRange(infl, list.Count-infl), x);
+                }
+            }
+        }
+
         static void Main(string[] args)
         {
             //Console.WriteLine(Solutions.IsRotatedString("waterbottle", "erbottlewat"));

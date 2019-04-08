@@ -71,6 +71,8 @@ namespace Solutions.SortingAndSearching
 
             return list;
         }
+        
+
 
         private static void Merge(List<int> list, int[] helper, int low, int middle, int high)
         {
@@ -125,6 +127,8 @@ namespace Solutions.SortingAndSearching
             {
                 QuickSortHelper(list, index, right);
             }
+
+            return list;
         }
 
         private static int Partition(List<int> list, int left, int right)
@@ -151,6 +155,29 @@ namespace Solutions.SortingAndSearching
             list[pivotIndex] = list[j];
             list[j] = temp;
             return pivotIndex;
+        }
+        
+        public static int BinarySearch(List<int> list, int x)
+        {
+            int low = 0;
+            int high = list.Count;
+            int mid;
+
+            while(low <= high)
+            {
+                mid = (low + high) / 2;
+                if(list[mid] < x)
+                {
+                    low = mid + 1;
+                } else if (list[mid] > x)
+                {
+                    high = mid-1;
+                } else
+                {
+                    return mid;
+                }
+            }
+            throw new Exception('Value is not in List.');
         }
     }
 }
