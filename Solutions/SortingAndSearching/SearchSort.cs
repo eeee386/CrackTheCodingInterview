@@ -177,7 +177,31 @@ namespace Solutions.SortingAndSearching
                     return mid;
                 }
             }
-            throw new Exception('Value is not in List.');
+            return -1;
+        }
+
+        public static Tuple<int, int> TwoDimensionalMatrixBinarySearch(List<List<int>> matrix, int x)
+        {
+            int row = 0;
+            int col = matrix.Count-1;
+            while (row < matrix[0].Count && col >= 0)
+            {
+                if (matrix[col][row] == x)
+                {
+                    return new Tuple<int, int>(col, row);
+                }
+
+                if (matrix[col][row] < x)
+                {
+                    row++;
+                }
+                else
+                {
+                    col--;
+                }
+            }
+
+            return new Tuple<int, int>(-1, -1);
         }
     }
 }

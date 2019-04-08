@@ -51,6 +51,7 @@
         <e p="Solutions.csproj.DotSettings" t="Include" />
         <e p="SortingAndSearching" t="Include">
           <e p="SearchSort.cs" t="Include" />
+          <e p="Stream.cs" t="Include" />
         </e>
         <e p="StacksAndQueues" t="Include">
           <e p="AnimalShelter.cs" t="Include" />

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
 using Solutions.BitManipulation;
 
 namespace Solutions
@@ -61,26 +63,30 @@ namespace Solutions
             int aIndex = 0;
             int bIndex = 0;
             int hIndex = 0;
-            while(aIndex < a.Length && bIndex < b.Length)
+            while (aIndex < a.Length && bIndex < b.Length)
             {
-                if(a[aIndex] <= b[bIndex])
+                if (a[aIndex] <= b[bIndex])
                 {
                     helper[hIndex] = a[aIndex];
                     aIndex++;
-                } else
+                }
+                else
                 {
                     helper[hIndex] = b[bIndex];
                     bIndex++;
                 }
+
                 hIndex++;
             }
+
             int remaining = a.Length - aIndex;
 
-            for(int g = 0; g < remaining; g++)
+            for (int g = 0; g < remaining; g++)
             {
                 helper[hIndex] = a[aIndex + g];
                 hIndex++;
             }
+
             return helper;
         }
 
@@ -88,39 +94,172 @@ namespace Solutions
         {
             var dict = new Dictionary<string, List<string>>();
             List<string> groupedList = new List<string>();
-            foreach(var str in strings)
+            foreach (var str in strings)
             {
                 var cs = str.ToCharArray();
                 Array.Sort(cs);
                 var key = cs.ToString();
-                if(dict[key] == null)
+                if (dict[key] == null)
                 {
                     dict.Add(key, new List<string>());
                     dict[key].Add(str);
                 }
             }
-            foreach(var obj in dict)
+
+            foreach (var obj in dict)
             {
                 groupedList.AddRange(dict[obj.Key]);
             }
+
             return groupedList;
         }
 
-        public static int FindValueInRotatedArray(List<int>list, int x)
+        public static int FindValueInRotatedArray(List<int> list, int x)
         {
-            int infl = 0;
-            for(int i = 0; i < list.Count-1; i++)
+            int pivot = FindPivotInRotatedArray(list);
+
+            if (pivot == -1)
             {
-                if(list[i] == x)
+                return SortingAndSearching.SearchSort.BinarySearch(list, x);
+            }
+            else
+            {
+                if (list[0] > x && list[list.Count - 1] < x)
                 {
-                    return i;
+                    return -1;
                 }
-                if(list[i] > list[i + 1])
+                else if (list[0] <= x)
                 {
-                    infl = i + 1;
-                    SortingAndSearching.SearchSort.BinarySearch(list.GetRange(infl, list.Count-infl), x);
+                    return SortingAndSearching.SearchSort.BinarySearch(list.GetRange(0, pivot), x);
+                }
+                else
+                {
+                    return SortingAndSearching.SearchSort.BinarySearch(list.GetRange(pivot, list.Count - pivot), x);
                 }
             }
+        }
+
+        public static int FindPivotInRotatedArray(List<int> list)
+        {
+            int high = list.Count - 1;
+            int low = 0;
+
+            while (high > low)
+            {
+                int mid = (high + low) / 2;
+                if (mid < high && list[mid] > list[mid + 1])
+                {
+                    return mid;
+                }
+
+                if (mid > low && list[mid] < list[mid - 1])
+                {
+                    return mid + 1;
+                }
+
+                if (list[low] > list[mid])
+                {
+                    high = mid - 1;
+                }
+                else
+                {
+                    low = mid;
+                }
+            }
+
+            return -1;
+        }
+
+        public static int SortedSearchNoSize(int x)
+        {
+            // Prepare Listy
+            Random rnd = new Random();
+            List<int> listy = new List<int>(rnd.Next());
+            for (int i = 0; i < listy.Capacity; i++)
+            {
+                listy[i] = rnd.Next();
+            }
+            // end prepare.
+
+            if (listy.Count == 0)
+            {
+                return -1;
+            }
+
+            int indexPlusOne = 1;
+
+            while (true)
+            {
+                if (listy[indexPlusOne - 1] == x)
+                {
+                    return indexPlusOne - 1;
+                }
+
+                if (listy[indexPlusOne - 1] == -1 || listy[indexPlusOne - 1] > x)
+                {
+                    //Listy does not have a Capacity method! it is just for not throwing error;
+                    return SortingAndSearching.SearchSort.BinarySearch(
+                        listy.GetRange(indexPlusOne - 1, listy.Capacity - indexPlusOne - 1), x);
+                }
+
+                if (listy[indexPlusOne] != -1 && listy[indexPlusOne - 1] < x)
+                {
+                    indexPlusOne = indexPlusOne * 2;
+                }
+            }
+        }
+
+        public static int SparseSearch(List<string> list, string s)
+        {
+            int low = 0;
+            int high = list.Count;
+            int mid;
+            int compareValue = 1;
+            while (low < high)
+            {
+                mid = (high + low) / 2;
+                if (list[mid] == "")
+                {
+                    if (compareValue == -1)
+                    {
+                        for (int i = mid; i < high; i++)
+                        {
+                            if (list[i] != "")
+                            {
+                                mid = i;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        for (int i = mid; i >= low; i--)
+                        {
+                            if (list[i] != "")
+                            {
+                                mid = i;
+                            }
+                        }
+                    }
+                }
+
+                compareValue = String.CompareOrdinal(list[mid], s);
+                if (compareValue == 0)
+                {
+                    return mid;
+                }
+
+                if (compareValue == -1)
+                {
+                    low = mid;
+                }
+
+                if (compareValue == 1)
+                {
+                    high = mid;
+                }
+            }
+
+            return -1;
         }
 
         static void Main(string[] args)
@@ -221,7 +360,7 @@ namespace Solutions
 //            Console.WriteLine(Convert.ToString(2356, 2));
 //            Console.WriteLine(Convert.ToString(new Bit(2356).FindNextSmallestOfBits(), 2));
 //            Console.WriteLine(Convert.ToString(new Bit(2356).FindNextLargestOfBits(), 2));
-            
+
 //            Console.WriteLine(Convert.ToString(13, 2));
 //            Console.WriteLine(Convert.ToString(new Bit(13).PairwiseSwap(), 2));
 //            
@@ -235,9 +374,16 @@ namespace Solutions
 //            Bit.DrawLine(screen, 40, 12, 35, 2);
             int[] ints = {9, 8, 3, 7, 1, 97, 3, 7, 4, 6, 4, 66, 225, 442, 123, 42, 123, 53, 664, 63, 24, 73};
             List<int> list = new List<int>(ints);
-            
+
+            int[] ints2 = {1, 2, 3, 4};
+            int[] ints3 = {5, 6, 7, 8};
+            List<int>[] intlists = {new List<int>(ints2), new List<int>(ints3)};
+            List<List<int>> matrix = new List<List<int>>( intlists);
+
             SortingAndSearching.SearchSort.MergeSort(list);
-            Console.WriteLine(list);
+//            Console.WriteLine(list);
+
+            Console.WriteLine(SortingAndSearching.SearchSort.TwoDimensionalMatrixBinarySearch(matrix, 9));
         }
     }
 }
