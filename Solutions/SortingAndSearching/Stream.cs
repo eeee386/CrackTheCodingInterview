@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Solutions.TreesAndGraphs;
 
@@ -74,6 +75,7 @@ namespace Solutions.SortingAndSearching
                     return leftSize + 1 + rightRank;
 
                 }
+                throw new Exception("not valid");
             }
         }
     }

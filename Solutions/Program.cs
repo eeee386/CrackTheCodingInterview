@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using Solutions.BitManipulation;
+using Solutions.TreesAndGraphs;
 
 namespace Solutions
 {
@@ -262,6 +263,38 @@ namespace Solutions
             return -1;
         }
 
+        public static void swap(int[] array, int i, int j)
+        {
+            int temp = array[j];
+            array[j] = array[i];
+            array[i] = temp;
+        }
+
+        public static void SubOptimalPeaksAndValleys(int[] array)
+        {
+            Array.Sort(array);
+            for (int i = 1; i < array.Length; i = i + 2)
+            {
+                swap(array, i, i-1);
+            }
+        }
+
+        public static void PeaksAndValleys(int[] array)
+        {
+            for (int i = 0; i < array.Length; i = i + 2)
+            {
+                if (i > 0 && array[i] < array[i - 1])
+                {
+                    swap(array, i, i-1);
+                }
+
+                if (i < array.Length - 1 && array[i] < array[i + 1])
+                {
+                    swap(array, i, i+1);
+                }
+            }
+        }
+
         static void Main(string[] args)
         {
             //Console.WriteLine(Solutions.IsRotatedString("waterbottle", "erbottlewat"));
@@ -372,18 +405,25 @@ namespace Solutions
 
 //            byte[] screen = new byte[40];
 //            Bit.DrawLine(screen, 40, 12, 35, 2);
-            int[] ints = {9, 8, 3, 7, 1, 97, 3, 7, 4, 6, 4, 66, 225, 442, 123, 42, 123, 53, 664, 63, 24, 73};
-            List<int> list = new List<int>(ints);
+//            int[] ints = {9, 8, 3, 7, 1, 97, 3, 7, 4, 6, 4, 66, 225, 442, 123, 42, 123, 53, 664, 63, 24, 73};
+//            List<int> list = new List<int>(ints);
+//
+//            int[] ints2 = {1, 2, 3, 4};
+//            int[] ints3 = {5, 6, 7, 8};
+//            List<int>[] intlists = {new List<int>(ints2), new List<int>(ints3)};
+//            List<List<int>> matrix = new List<List<int>>( intlists);
+//
+//            SortingAndSearching.SearchSort.MergeSort(list);
+////            Console.WriteLine(list);
+//
+//            Console.WriteLine(SortingAndSearching.SearchSort.TwoDimensionalMatrixBinarySearch(matrix, 9));
 
-            int[] ints2 = {1, 2, 3, 4};
-            int[] ints3 = {5, 6, 7, 8};
-            List<int>[] intlists = {new List<int>(ints2), new List<int>(ints3)};
-            List<List<int>> matrix = new List<List<int>>( intlists);
-
-            SortingAndSearching.SearchSort.MergeSort(list);
-//            Console.WriteLine(list);
-
-            Console.WriteLine(SortingAndSearching.SearchSort.TwoDimensionalMatrixBinarySearch(matrix, 9));
+            int[] a = {1, 5, 2, 6, 4, 8, 33, 66, 46, 75, 81, 1, 84, 1, 67, 32, 28, 61, 64, 86, 39};
+            PredicatedHeap p = new PredicatedHeap(31, HeapType.MIN);
+            foreach (int i in a)
+            {
+                p.Add(i);
+            }
         }
     }
 }
